@@ -1,0 +1,30 @@
+<ListView #listview [items]="tracks | orderBy: 'order'" class="list-group" [itemTemplateSelector]="templateSelector" (itemLoading)="disableRowColor($event)">
+  <ng-template let-track="item" nsTemplateKey="default">
+    <GridLayout rows="auto" columns="50,*,50" class="list-group-item" [class.muted]="track.mute">
+      <Button [text]="'ion-record' | fonticon" (tap)="record(track)" row="0" col="0" class="ion text-left c-ruby rerecord-track"></Button>
+      <Button [text]="track.name" row="0" col="1" class="h2 text-left" multiGesture [tapAction]="editName" [longPressAction]="confirmDelete" [item]="track" btn-fix></Button>
+      <Button [text]="(track.mute ? 'ion-volume-mute' : 'ion-ios-volume-high') | fonticon" row="0" col="2" class="ion mute-icon" (tap)="track.mute=!track.mute"></Button>
+    </GridLayout>
+  </ng-template>
+
+  <ng-template let-track="item" nsTemplateKey="waveform">
+    <AbsoluteLayout [class.muted]="track.mute">
+      <Waveform class="waveform w-full" top="0" left="0" height="80"
+        [model]="track.model"
+        [duration]="track.duration"
+        [longestDuration]="longestDuration"
+        type="file"
+        plotColor="yellow"
+        fill="true"
+        mirror="true"
+        plotType="buffer"></Waveform>
+      
+        <GridLayout rows="auto" columns="auto,*,75" class="track-mixer-heading">
+          <Label [text]="track.name" row="0" col="0" class="h3 c-white"></Label>
+          <Label [text]="track.durationDisplay" row="0" col="2" class="h4 c-white text-right"></Label>
+        </GridLayout>
+        <Slider slim-slider="fader.png" minValue="0" maxValue="1" [(ngModel)]="track.volume" class="slider fader" width="94%" top="50" left="0"></Slider>
+        
+    </AbsoluteLayout>
+  </ng-template>
+</ListView>

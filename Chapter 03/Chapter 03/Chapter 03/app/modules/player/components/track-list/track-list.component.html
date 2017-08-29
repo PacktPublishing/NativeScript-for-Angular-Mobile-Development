@@ -1,0 +1,19 @@
+<!--<ListView [items]="playerService.tracks" class="list-group">
+  <template let-track="item">
+    <GridLayout rows="auto" columns="75,*,100">
+      <Button text="Record" (tap)="record(track)" row="0" col="0"></Button>
+      <Label [text]="track.name" row="0" col="1" class="list-group-item"></Label>
+      <Switch [checked]="track.solo" row="0" col="2" class="switch"></Switch>
+    </GridLayout>
+  </template>
+</ListView>-->
+
+<ListView [items]="playerService.tracks | orderBy: 'order'">
+  <template let-track="item">
+    <GridLayout rows="auto" columns="100,*,100">
+      <Button text="Record" (tap)="record(track)" row="0" col="0"></Button>
+      <Label [text]="track.name" row="0" col="1"></Label>
+      <Switch row="0" col="2"></Switch>
+    </GridLayout>
+  </template>
+</ListView>

@@ -1,0 +1,5 @@
+<action-bar [title]="composition.name" (showRecordModal)="showRecordModal()"></action-bar>
+<GridLayout rows="*, auto" columns="*" class="page">
+  <track-list [tracks]="composition.tracks" row="0" col="0"></track-list>
+  <player-controls [composition]="composition" row="1" col="0"></player-controls>
+</GridLayout>

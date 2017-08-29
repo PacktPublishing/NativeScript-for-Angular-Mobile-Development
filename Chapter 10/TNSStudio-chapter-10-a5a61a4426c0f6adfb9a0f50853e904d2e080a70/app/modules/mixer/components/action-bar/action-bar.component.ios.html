@@ -1,0 +1,11 @@
+<ActionBar [title]="title" class="action-bar">
+  <ActionItem nsRouterLink="/mixer/home">
+    <Button text="List" class="action-item"></Button>
+  </ActionItem>
+  <ActionItem (tap)="toggleList()" ios.position="right">
+    <Button [text]="(uiState$ | async)?.trackListViewType" class="action-item"></Button>
+  </ActionItem>
+  <ActionItem (tap)="recordAction.next()" ios.position="right">
+    <Button text="Record" class="action-item"></Button>
+  </ActionItem>
+</ActionBar>

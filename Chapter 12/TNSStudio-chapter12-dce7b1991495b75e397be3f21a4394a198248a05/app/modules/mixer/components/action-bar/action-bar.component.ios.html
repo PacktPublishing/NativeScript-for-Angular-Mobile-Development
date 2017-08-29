@@ -1,0 +1,11 @@
+<ActionBar [title]="title" class="action-bar">
+  <ActionItem nsRouterLink="/mixer/home">
+    <Button [text]="'fa-list-ul' | fonticon" class="fa action-item"></Button>
+  </ActionItem>
+  <ActionItem (tap)="toggleList()" ios.position="right">
+    <Button [text]="((uiState$ | async)?.trackListViewType == 'default' ? 'fa-sliders' : 'fa-list') | fonticon" class="fa action-item"></Button>
+  </ActionItem>
+  <ActionItem (tap)="recordAction.next()" ios.position="right">
+    <Button [text]="'fa-circle' | fonticon" class="fa c-ruby action-item"></Button>
+  </ActionItem>
+</ActionBar>

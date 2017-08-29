@@ -1,0 +1,9 @@
+@import 'nativescript-theme-core/css/core.dark.css';
+
+.action-bar {
+  background-color:#101B2E;
+}
+
+Page {
+  background-color:#101B2E;
+}

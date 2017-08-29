@@ -1,0 +1,4 @@
+<StackLayout row="1" col="0" class="player-controls">
+  <shuttle-slider></shuttle-slider>
+  <Button [text]="((playerState$ | async)?.player?.playing ? 'fa-pause' : 'fa-play') | fonticon" (tap)="togglePlay()" class="fa c-white t-30"></Button>
+</StackLayout>

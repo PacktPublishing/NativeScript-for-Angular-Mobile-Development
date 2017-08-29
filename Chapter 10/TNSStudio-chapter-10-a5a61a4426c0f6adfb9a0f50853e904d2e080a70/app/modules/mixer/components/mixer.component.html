@@ -1,0 +1,5 @@
+<action-bar [title]="composition.name" (recordAction)="record()"></action-bar>
+<GridLayout rows="*, auto" columns="*" class="page">
+  <track-list [tracks]="composition.tracks" row="0" col="0" (recordAction)="record($event)"></track-list>
+  <player-controls row="1" col="0"></player-controls>
+</GridLayout>

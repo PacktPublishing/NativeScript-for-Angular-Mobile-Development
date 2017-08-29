@@ -1,0 +1,5 @@
+<action-bar [title]="composition.name"></action-bar>
+<GridLayout rows="*, 100" columns="*" class="page">
+  <track-list [tracks]="composition.tracks" row="0" col="0"></track-list>
+  <player-controls row="1" col="0"></player-controls>
+</GridLayout>

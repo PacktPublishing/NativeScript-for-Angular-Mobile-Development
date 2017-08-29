@@ -1,0 +1,155 @@
+// customized variables
+@import 'variables';
+// theme standard rulesets
+@import '~nativescript-theme-core/scss/index';
+// define our custom styles here...
+
+.ion {
+  font-family: Ionicons, ionicons;
+  font-size: 25;
+}
+
+Page {
+  background-color: $background;
+}
+
+ListView { 
+  separator-color: transparent; 
+}
+
+.action-bar {
+  .toggle-view {
+    padding: 0 10 0 0;
+  }
+}
+
+.player-controls {
+  padding:0 0 15 0;
+  background-color:$slate;
+
+  .controls {
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+
+    .ion {  
+      &.play-btn {
+        font-size: 40;
+      }
+    }
+
+    .side-btn {
+      width: 150;
+    }
+  }
+}
+
+.slider-area {
+  .slider {
+    background-color: yellow;
+  }
+}
+
+.slider {
+  &.fader {
+    background-color: $black;
+  }
+}
+
+.list-group {
+  background-color: $black;
+
+  .rerecord-track {
+    padding: 0 0 0 6;
+  }
+  
+  .count {
+    padding: 0 10 0 0;
+  }
+
+  .muted {
+    opacity:.2;
+  }
+
+  .track-mixer-heading {
+    background-color: rgba(51, 51, 51, .3);
+    left: 0;
+    top: 0;
+    padding:5 12 5 12;
+    width: 100%;
+  }
+}
+
+/* record */
+.record {
+  background-color: $slate;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: stretch;
+  align-content: center;
+
+  .modal-top-bar {
+    padding: 10;
+  }
+
+  .waveform {
+    background-color: transparent;
+    order: 1;
+    flex-grow: 1;
+  }
+
+  .controls {
+    width: 100%;
+    height: 200;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+  
+    .ion {
+      font-size: 40;
+      color: $white;
+  
+      &.record-btn {
+        font-size: 70;
+        color: $ruby;
+        margin: 0 50 0 50;
+  
+        &.is-recording {
+          color: $white;
+        }
+      }
+    }
+  
+    .btn {
+      color: #fff;
+      &[isEnabled=false] {
+        background-color: transparent;
+        color: #777;
+      }
+    }
+  
+    &.bottom {
+      height: 90;
+      justify-content: flex-end;
+      &.recording {
+        background-color: #B0342D;
+      }
+      .ion {
+        border-radius: 60;
+        font-size: 30;
+        height: 62;
+        width: 62;
+        padding: 2;
+        margin: 0 10 0 0;
+        &.save-ready {
+          background-color: #42B03D;
+        }
+      }
+    }
+  }
+}

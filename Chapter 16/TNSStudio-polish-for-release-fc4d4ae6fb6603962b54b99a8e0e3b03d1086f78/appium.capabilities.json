@@ -1,0 +1,19 @@
+{
+  "android44": {
+    "browserName": "",
+    "appium-version": "1.6.5",
+    "platformName": "Android",
+    "platformVersion": "4.4",
+    "deviceName": "Android Emulator",
+    "noReset": false,
+    "app": ""
+  },
+  "ios10phone": {
+    "browserName": "",
+    "appium-version": "1.6.5",
+    "platformName": "iOS",
+    "platformVersion": "10.0",
+    "deviceName": "iPhone 6 Simulator",
+    "app": ""
+  }
+}

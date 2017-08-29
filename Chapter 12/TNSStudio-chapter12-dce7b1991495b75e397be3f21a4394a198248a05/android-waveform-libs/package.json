@@ -1,0 +1,9 @@
+{
+  "name": "android-waveform-libs",
+  "version": "1.0.0",
+  "nativescript": {
+    "platforms": {
+      "android": "3.0.0"
+    }
+  }
+}

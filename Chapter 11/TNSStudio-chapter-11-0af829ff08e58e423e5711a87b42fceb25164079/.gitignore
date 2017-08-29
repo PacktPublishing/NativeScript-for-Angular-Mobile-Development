@@ -1,0 +1,9 @@
+*.js
+*.map
+*.css
+!app/assets/font-awesome.css
+hooks
+lib
+node_modules
+/platforms
+.vscode/angulardoc.json

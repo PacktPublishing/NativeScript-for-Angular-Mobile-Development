@@ -1,0 +1,6 @@
+<GridLayout #sliderArea rows="auto, auto" columns="auto,*,auto" class="slider-area">
+  <Slider #slider slim-slider minValue="0" [maxValue]="duration"
+      colSpan="3" class="slider"></Slider>
+  <Label #currentTimeDisplay text="00:00" class="h4 m-x-5" row="1" col="0"></Label>
+  <Label [text]="durationDisplay" class="h4 text-right m-x-5" row="1" col="2"></Label>
+</GridLayout>

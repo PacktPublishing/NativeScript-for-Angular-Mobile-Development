@@ -1,0 +1,8 @@
+<StackLayout row="1" col="0" class="player-controls">
+  <shuttle-slider></shuttle-slider>
+  <FlexboxLayout class="controls">
+    <Button [text]="'fa-backward' | fonticon" class="fa text-center c-white side-btn" (tap)="rewind()"></Button>
+    <Button [text]="((playerState$ | async)?.player?.playing ? 'fa-pause' : 'fa-play') | fonticon" (tap)="togglePlay()" class="fa c-white t-30 play-btn"></Button>
+    <StackLayout class="side-btn"></StackLayout>
+  </FlexboxLayout>
+</StackLayout>

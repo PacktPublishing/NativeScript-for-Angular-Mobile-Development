@@ -1,0 +1,11 @@
+*.js
+*.map
+*.css
+!app/assets/ionicons.css
+hooks
+lib
+node_modules
+/platforms
+.vscode/angulardoc.json
+nstudio.jks
+idea/

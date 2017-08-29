@@ -1,0 +1,16 @@
+android {
+  productFlavors {
+    "android-waveform-libs" {
+      dimension "android-waveform-libs"
+    }
+  }
+}
+
+repositories {
+  maven { url "https://jitpack.io" }
+}
+
+dependencies {
+  compile "com.yalantis:eqwaves:1.0.1"
+  compile "com.github.Semantive:waveform-android:v1.2"
+}

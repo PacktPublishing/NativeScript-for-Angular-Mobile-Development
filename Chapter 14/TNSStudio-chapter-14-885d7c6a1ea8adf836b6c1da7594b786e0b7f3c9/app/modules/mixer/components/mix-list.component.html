@@ -1,0 +1,15 @@
+<ActionBar title="Compositions" class="action-bar">
+  <ActionItem (tap)="add()" ios.position="right">
+    <Button [text]="'fa-plus' | fonticon" class="fa action-item"></Button>
+  </ActionItem>
+</ActionBar>
+<ListView [items]="(mixer$ | async)?.compositions | orderBy: 'order'" class="list-group">
+  <ng-template let-composition="item">
+    <GridLayout rows="auto" columns="100,*,auto" class="list-group-item">
+      <Button [text]="'fa-pencil' | fonticon" (tap)="edit(composition)" row="0" col="0" class="fa"></Button>
+      <Label [text]="composition.name" (tap)="select(composition)" row="0" col="1" class="h2"></Label>
+      <Label [text]="composition.tracks.length" row="0" col="2" class="text-right"></Label>
+    </GridLayout>
+  </ng-template>
+</ListView>
+

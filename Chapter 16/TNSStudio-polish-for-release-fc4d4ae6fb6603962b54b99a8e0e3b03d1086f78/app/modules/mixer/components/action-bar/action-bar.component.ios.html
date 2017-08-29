@@ -1,0 +1,11 @@
+<ActionBar [title]="title" class="action-bar">
+  <ActionItem nsRouterLink="/mixer/home">
+    <Button [text]="'ion-navicon' | fonticon" class="ion action-item"></Button>
+  </ActionItem>
+  <ActionItem (tap)="toggleList()" ios.position="right">
+    <Button [text]="((uiState$ | async)?.trackListViewType == 'default' ? 'ion-ios-settings' : 'ion-ios-list-outline') | fonticon" class="ion action-item toggle-view"></Button>
+  </ActionItem>
+  <ActionItem (tap)="recordAction.next()" ios.position="right">
+    <Button [text]="'ion-record' | fonticon" class="ion c-ruby action-item"></Button>
+  </ActionItem>
+</ActionBar>

@@ -1,0 +1,15 @@
+<ActionBar title="Compositions" class="action-bar mix-list">
+  <ActionItem (tap)="add()" ios.position="right">
+    <Button [text]="'ion-ios-plus-outline' | fonticon" class="ion action-item text-right"></Button>
+  </ActionItem>
+</ActionBar>
+<ListView #listview [items]="(mixer$ | async)?.compositions | orderBy: 'order'" class="list-group" (itemLoading)="disableRowColor($event)">
+  <ng-template let-composition="item">
+    <GridLayout rows="auto" columns="75,*,45" class="list-group-item mix-list">
+      <Button [text]="'ion-edit' | fonticon" (tap)="edit(composition)" row="0" col="0" class="ion edit-btn"></Button>
+      <Label [text]="composition.name" multiGesture [tapAction]="select" [longPressAction]="confirmDelete" [item]="composition" row="0" col="1" class="h2"></Label>
+      <Label [text]="composition.tracks.length" (tap)="select(composition)" row="0" col="2" class="text-right count"></Label>
+    </GridLayout>
+  </ng-template>
+</ListView>
+

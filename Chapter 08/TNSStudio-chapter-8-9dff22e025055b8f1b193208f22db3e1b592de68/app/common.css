@@ -1,0 +1,25 @@
+@import 'nativescript-theme-core/css/core.dark.css';
+
+.action-bar {
+  background-color:#101B2E;
+}
+
+Page {
+  background-color:#101B2E;
+}
+
+ListView { 
+  separator-color: transparent; 
+}
+
+.track-name-float {
+  color: RGBA(136, 135, 3, .5);
+}
+
+.slider.fader {
+  background-color: #000;
+}
+
+.list-group .muted {
+  opacity:.2;
+}

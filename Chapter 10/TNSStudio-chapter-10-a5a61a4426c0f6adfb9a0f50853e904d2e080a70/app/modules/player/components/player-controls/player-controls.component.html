@@ -1,0 +1,4 @@
+<StackLayout row="1" col="0" class="controls">
+  <shuttle-slider></shuttle-slider>
+  <Button [text]="(playerState$ | async)?.player?.playing ? 'Stop' : 'Play'" (tap)="togglePlay()" class="btn btn-primary w-100"></Button>
+</StackLayout>

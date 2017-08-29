@@ -1,0 +1,27 @@
+<ActionBar title="Record" icon="" class="action-bar">
+  <NavigationButton visibility="collapsed"></NavigationButton>
+  <ActionItem text="Cancel" ios.systemIcon="1" (tap)="cancel()"></ActionItem>
+</ActionBar>
+<FlexboxLayout class="record">
+  <GridLayout rows="auto" columns="auto,*,auto" class="p-10" [visibility]="isModal ? 'visible' : 'collapsed'">
+    <Button text="Cancel" (tap)="cancel()" row="0" col="0" class="c-white"></Button>
+  </GridLayout>
+  <Waveform class="waveform"
+    [model]="recorderService.model" 
+    type="mic" 
+    plotColor="yellow" 
+    fill="false" 
+    mirror="true" 
+    plotType="buffer">
+  </Waveform>
+  <StackLayout class="p-5">
+    <FlexboxLayout class="controls">
+      <Button text="Rewind" class="btn text-center" (tap)="recorderService.rewind()" [isEnabled]="state == recordState.readyToPlay || state == recordState.playing"></Button>
+      <Button [text]="recordBtn" class="btn text-center" (tap)="recorderService.toggleRecord()" [isEnabled]="state != recordState.playing"></Button>
+      <Button [text]="playBtn" class="btn text-center" (tap)="recorderService.togglePlay()" [isEnabled]="state == recordState.readyToPlay || state == recordState.playing"></Button>
+    </FlexboxLayout>
+    <FlexboxLayout class="controls bottom" [class.recording]="state == recordState.recording">
+      <Button text="Save" class="btn" [class.save-ready]="state == recordState.readyToPlay" [isEnabled]="state == recordState.readyToPlay" (tap)="recorderService.save()"></Button>
+    </FlexboxLayout>
+  </StackLayout>
+</FlexboxLayout>

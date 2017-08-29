@@ -1,0 +1,29 @@
+<ActionBar title="Record" icon="" class="action-bar">
+  <NavigationButton visibility="collapsed"></NavigationButton>
+  <ActionItem text="Cancel" ios.systemIcon="1" (tap)="cancel()"></ActionItem>
+</ActionBar>
+<FlexboxLayout class="record">
+  <GridLayout rows="auto" columns="auto,*,auto" class="modal-top-bar" [visibility]="isModal ? 'visible' : 'collapsed'">
+    <Button [text]="'ion-ios-close-empty' | fonticon" (tap)="cancel()" row="0" col="0" class="ion c-white modal-top-close-btn"></Button>
+  </GridLayout>
+  <Waveform class="waveform"
+    [model]="recorderService.model" 
+    type="mic" 
+    plotColor="yellow" 
+    fill="false" 
+    mirror="true" 
+    plotType="buffer">
+  </Waveform>
+  <StackLayout class="p-5">
+    <!-- need some more features before this will be truly useful here -->
+    <!-- <shuttle-slider></shuttle-slider> -->
+    <FlexboxLayout class="controls">
+      <Button [text]="'ion-ios-rewind' | fonticon" class="ion text-center" (tap)="recorderService.rewind()" [isEnabled]="state == recordState.readyToPlay || state == recordState.playing"></Button>
+      <Button [text]="recordBtn | fonticon" class="ion record-btn text-center" (tap)="recorderService.toggleRecord()" [isEnabled]="state != recordState.playing" [class.is-recording]="state == recordState.recording"></Button>
+      <Button [text]="playBtn | fonticon" class="ion text-center" (tap)="recorderService.togglePlay()" [isEnabled]="state == recordState.readyToPlay || state == recordState.playing"></Button>
+    </FlexboxLayout>
+    <FlexboxLayout class="controls bottom" [class.recording]="state == recordState.recording">
+      <Button [text]="'ion-checkmark' | fonticon" class="ion" [class.save-ready]="state == recordState.readyToPlay" [isEnabled]="state == recordState.readyToPlay" (tap)="recorderService.save()"></Button>
+    </FlexboxLayout>
+  </StackLayout>
+</FlexboxLayout>

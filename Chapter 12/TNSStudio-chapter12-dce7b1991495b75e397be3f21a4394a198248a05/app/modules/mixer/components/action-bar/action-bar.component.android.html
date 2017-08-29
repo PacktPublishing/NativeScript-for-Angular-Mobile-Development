@@ -1,0 +1,8 @@
+<ActionBar class="action-bar">
+  <GridLayout rows="auto" columns="auto,*,auto,auto" class="action-bar">
+    <Button [text]="'fa-list-ul' | fonticon" nsRouterLink="/mixer/home" class="fa action-item" row="0" col="0"></Button>
+    <Label [text]="title" class="action-bar-title text-center" row="0" col="1"></Label>
+    <Button [text]="((uiState$ | async)?.trackListViewType == 'default' ? 'fa-sliders' : 'fa-list') | fonticon" (tap)="toggleList()" class="fa action-item" row="0" col="2"></Button>
+    <Button [text]="'fa-circle' | fonticon" (tap)="recordAction.next()" class="fa c-ruby action-item" row="0" col="3"></Button>
+  </GridLayout>
+</ActionBar>

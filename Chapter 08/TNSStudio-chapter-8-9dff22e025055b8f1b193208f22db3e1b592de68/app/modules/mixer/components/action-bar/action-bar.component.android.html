@@ -1,0 +1,8 @@
+<ActionBar class="action-bar">
+  <GridLayout rows="auto" columns="auto,*,auto,auto" class="action-bar">
+    <Button text="List" nsRouterLink="/mixer/home" class="action-item" row="0" col="0"></Button>
+    <Label [text]="title" class="action-bar-title text-center" row="0" col="1"></Label>
+    <Button [text]="toggleListText" (tap)="toggleList()" class="action-item" row="0" col="2"></Button>
+    <Button text="Record" (tap)="record()" class="action-item" row="0" col="3"></Button>
+  </GridLayout>
+</ActionBar>

@@ -1,0 +1,25 @@
+<ListView #listview [items]="tracks | orderBy: 'order'" class="list-group" [itemTemplateSelector]="templateSelector">
+  <ng-template let-track="item" nsTemplateKey="default">
+    <GridLayout rows="auto" columns="100,*,100" class="list-group-item" [class.muted]="track.mute">
+      <Button text="Record" (tap)="record(track)" row="0" col="0" class="c-ruby"></Button>
+      <Label [text]="track.name" row="0" col="1" class="h2"></Label>
+      <Switch row="0" col="2" class="switch"></Switch>
+    </GridLayout>
+  </ng-template>
+
+  <ng-template let-track="item" nsTemplateKey="waveform">
+    <AbsoluteLayout [class.muted]="track.mute">
+      <Waveform class="waveform w-full" top="0" left="0" height="80"
+        [model]="track.model"
+        type="file"
+        plotColor="yellow"
+        fill="true"
+        mirror="true"
+        plotType="buffer"></Waveform>
+      
+        <Label [text]="track.name" row="0" col="1" class="h3 track-name-float" top="5" left="20"></Label>
+        <Slider slim-slider="fader.png" minValue="0" maxValue="1" [(ngModel)]="track.volume" class="slider fader" width="94%" top="50" left="0"></Slider>
+        
+    </AbsoluteLayout>
+  </ng-template>
+</ListView>

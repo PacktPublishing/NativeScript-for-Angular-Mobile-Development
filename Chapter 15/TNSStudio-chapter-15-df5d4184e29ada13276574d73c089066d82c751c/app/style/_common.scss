@@ -1,0 +1,73 @@
+// customized variables
+@import 'variables';
+// theme standard rulesets
+@import '~nativescript-theme-core/scss/index';
+// define our custom styles here...
+
+.fa {
+  font-family: 'FontAwesome', fontawesome-webfont;
+  font-size: 25;
+}
+
+Page {
+  background-color: $background;
+}
+
+ListView { 
+  separator-color: transparent; 
+}
+
+// .composition-list {
+
+//   .edit-btn {
+//     width: 100;
+//   }
+// }
+
+.player-controls {
+  padding:0 0 15 0;
+  background-color:$slate;
+
+  .controls {
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+
+    .fa {  
+      &.play-btn {
+        font-size: 40;
+      }
+    }
+
+    .side-btn {
+      width: 150;
+    }
+  }
+}
+
+.track-name-float {
+  color: RGBA(136, 135, 3, .5);
+}
+
+.slider-area {
+  .slider {
+    background-color: yellow;
+  }
+}
+
+.slider {
+  &.fader {
+    background-color: $black;
+  }
+}
+
+.list-group {
+  background-color: $black;
+
+  .muted {
+    opacity:.2;
+  }
+}

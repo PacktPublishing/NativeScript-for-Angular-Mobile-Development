@@ -1,0 +1,7 @@
+*.js
+*.map
+hooks
+lib
+node_modules
+platforms
+.vscode/angulardoc.json

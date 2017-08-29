@@ -1,0 +1,60 @@
+@import '~nativescript-theme-core/scss/platforms/index.android';
+
+Button {
+  background-color: transparent; 
+  border-color: transparent;
+  border-width: 1;
+  text-transform: lowercase;
+}
+
+.action-bar {
+  // &.mix-list {
+    padding:0;
+    margin:0;
+    // .action-item {
+
+    //   &.right {
+    //     padding-right: 18;
+    //     // padding:0;
+    //     // margin:0;
+    //     text-align: right;
+    //   }
+    // }
+  // }
+}
+
+.list-group {
+  padding:0;
+  margin:0;
+
+  .list-group-item {
+    padding:5 5 5 10;
+
+    &.mix-list {
+      padding:10 14 10 5;
+    }
+
+    .rerecord-track {
+      text-align: center;
+    }
+  }
+}
+
+.record {
+
+  .modal-top-bar {
+    padding: 2 5 2 5;
+
+    .modal-top-close-btn {
+      text-align: left;
+    }
+  }
+
+  .controls {
+    .ion {
+      &.record-btn {
+        margin: 0 25 0 25;
+      }
+    }
+  }
+}

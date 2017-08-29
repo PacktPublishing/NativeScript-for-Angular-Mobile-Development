@@ -1,0 +1,8 @@
+<ActionBar class="action-bar">
+  <GridLayout rows="auto" columns="50,*,75,50">
+    <Button [text]="'ion-navicon' | fonticon" nsRouterLink="/mixer/home" class="ion action-item" row="0" col="0"></Button>
+    <Label [text]="title" class="action-bar-title text-left" row="0" col="1"></Label>
+    <Button [text]="((uiState$ | async)?.trackListViewType == 'default' ? 'ion-ios-settings' : 'ion-ios-list-outline') | fonticon" (tap)="toggleList()" class="ion action-item toggle-view text-right" row="0" col="2"></Button>
+    <Button [text]="'ion-record' | fonticon" (tap)="recordAction.next()" class="ion c-ruby action-item text-right" row="0" col="3"></Button>
+  </GridLayout>
+</ActionBar>

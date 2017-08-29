@@ -1,0 +1,46 @@
+{
+  "description": "NativeScript Application",
+  "license": "SEE LICENSE IN <your-license-filename>",
+  "readme": "NativeScript Application",
+  "repository": "<fill-your-repository-here>",
+  "nativescript": {
+    "id": "org.nativescript.TNSStudio",
+    "tns-ios": {
+      "version": "3.1.0"
+    },
+    "tns-android": {
+      "version": "3.1.1"
+    }
+  },
+  "dependencies": {
+    "@angular/animations": "~4.1.0",
+    "@angular/common": "~4.1.0",
+    "@angular/compiler": "~4.1.0",
+    "@angular/core": "~4.1.0",
+    "@angular/forms": "~4.1.0",
+    "@angular/http": "~4.1.0",
+    "@angular/platform-browser": "~4.1.0",
+    "@angular/platform-browser-dynamic": "~4.1.0",
+    "@angular/router": "~4.1.0",
+    "android-waveform-libs": "file:android-waveform-libs",
+    "nativescript-angular": "~3.1.0",
+    "nativescript-audio": "~3.5.0",
+    "nativescript-audiokit": "file:nativescript-audiokit",
+    "nativescript-permissions": "^1.2.3",
+    "nativescript-theme-core": "~1.0.4",
+    "reflect-metadata": "~0.1.8",
+    "rxjs": "~5.3.0",
+    "tns-core-modules": "~3.1.0",
+    "zone.js": "^0.8.4"
+  },
+  "devDependencies": {
+    "babel-traverse": "6.22.1",
+    "babel-types": "6.22.0",
+    "babylon": "6.15.0",
+    "lazy": "1.0.11",
+    "nativescript-dev-android-snapshot": "^0.*.*",
+    "nativescript-dev-typescript": "^0.4.2",
+    "tns-platform-declarations": "~3.1.0",
+    "typescript": "~2.3.2"
+  }
+}
